@@ -12,7 +12,7 @@ namespace task3.Controllers
     [ApiController]
     public class StudentsController : ControllerBase
     {
-        private readonly IDbService _dbService;
+        private IDbService _dbService; 
 
         public StudentsController(IDbService dbService)
         {
@@ -44,6 +44,7 @@ namespace task3.Controllers
           */
             return NotFound("Student was not found");
         }
+
 
         [HttpPut("{id}")]
         public IActionResult UpdateStudent(string id)
